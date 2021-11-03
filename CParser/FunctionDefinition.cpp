@@ -1,5 +1,4 @@
 #include "FunctionDefinition.hpp"
-#include <iostream>
 
 
 namespace CParser {

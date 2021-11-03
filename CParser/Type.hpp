@@ -1,6 +1,5 @@
 #pragma once
-#include <string>
-#include <vector>
+#include "Data.h"
 
 namespace CParser {
 	

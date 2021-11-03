@@ -1,6 +1,4 @@
-﻿#include <iostream>
-#include <fstream>
-#include <string>
+﻿#include "Data.h"
 #include "Tokenizer.hpp"
 #include "Parser.hpp"
 
@@ -17,6 +15,7 @@ enum commands {
 };
 
 int main() {
+	//setting the commands map
 	map<string, commands> some;
 	some["-help"] = HELP;
 	some["-tokens"] = TOKENS;
@@ -24,6 +23,7 @@ int main() {
 	some["-file"] = sFILE;
 	some["-exit"] = EXIT;
 
+	//file opening (the file contatins the c code)
 	ifstream fh ("C:\\Users\\Dan\\source\\repos\\CParser\\CParser\\test.myc");
 	string fileContents;
 	string line;
@@ -33,17 +33,18 @@ int main() {
 		fileContents.append("\n");
 	}
 	fh.close();
-
-	//cout << fileContents << endl << endl;
 	
+	//creating the tokens
 	Tokenizer tokenizer;
 	vector<Token> tokens = tokenizer.parse(fileContents);
 
+	//creating the parsing tree
 	Parser parser;
 	parser.parse(tokens);
 	
 	string command;
 
+	//main menu
 	string TEXT = " ::::::::  :::::::::     :::     :::::::::   ::::::::  :::::::::: :::::::::  \n:+:    :+: :+:    :+:  :+: :+:   :+:    :+: :+:    :+: :+:        :+:    :+: \n+:+        +:+    +:+ +:+   +:+  +:+    +:+ +:+        +:+        +:+    +:+ \n+#+        +#++:++#+ +#++:++#++: +#++:++#:  +#++:++#++ +#++:++#   +#++:++#:  \n+#+        +#+       +#+     +#+ +#+    +#+        +#+ +#+        +#+    +#+ \n#+#    #+# #+#       #+#     #+# #+#    #+# #+#    #+# #+#        #+#    #+# \n ########  ###       ###     ### ###    ###  ########  ########## ###    ### ";
 	cout << TEXT << "\n";
 	cout << "\nThis is a C language parser\n\nMade by: Dan Samoilovitch\nVersion 1.0\n\n";

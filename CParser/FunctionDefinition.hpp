@@ -1,7 +1,5 @@
 #pragma once
-#include <string>
-#include <vector>
-#include "Type.hpp"
+#include "Data.h"
 #include "Statement.hpp"
 
 namespace CParser {

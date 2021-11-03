@@ -1,6 +1,5 @@
 #pragma once
-#include <string>
-#include "Type.hpp"
+#include "Data.h"
 
 namespace CParser {
 	using namespace std;

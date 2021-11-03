@@ -1,17 +1,18 @@
 #include "Tokenizer.hpp"
-#include "stdexcept"
-#include <iostream>
 
 namespace CParser {
 	using namespace std;
 	
 	vector<Token> Tokenizer::parse(const string& inProgram)
 	{
+		/*
+		The function running over a string of c code data 
+		and divide it into tokens of different types.
+		*/
 		vector<Token> tokens;
 		Token currentToken;
 
 		currentToken.mLineNumber = 1;
-
 		for (char currCh : inProgram) {
 			if (currentToken.mType == STRING_ESCAPE_SEQUENCE) {
 				switch (currCh) {

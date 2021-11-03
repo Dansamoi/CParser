@@ -2,7 +2,7 @@ void main(int argc, char argv){
 	double foo = 1.5;
 	int hey = 1;
 	char hey = "Hello";
-	printf("Hello it has been %d years since I learned C.\n", 25);
+	printf("Hello it has been %d years since I learned C.\n", 3);
 }
 
 void hello(){

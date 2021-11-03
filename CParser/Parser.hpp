@@ -1,12 +1,8 @@
 #pragma once
+#include "Data.h"
 #include "Tokenizer.hpp"
-#include "FunctionDefinition.hpp"
-#include <optional>
-#include <string>
-#include <map>
-#include <vector>
-#include "Type.hpp"
 #include "Statement.hpp"
+#include "FunctionDefinition.hpp"
 
 namespace CParser {
 
@@ -29,14 +25,7 @@ namespace CParser {
 		optional<Statement> expectVariableDeclaration();
 		optional<Statement> expectFunctionCall();
 		bool expectFunctionDefinition();
-		/*
-		//name has no value => any identifier
-		optional<Token> expectIdentifier(const string& name = string());
-		
-		//name has no value => any operator
-		optional<Token> expectOperator(const string& name = string());\
-		*/
-		//name has no value => any operator
+
 		optional<Token> expectTokenType(TokenType type, const string& name = string());
 
 		vector<Token>::iterator mEndToken;
